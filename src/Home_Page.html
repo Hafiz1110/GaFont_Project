@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Buat skala tipografi yang harmonis dengan golden ratio.">
+    <title>GaFont — Typography Scale Generator</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen min-w-[320px] bg-canvas font-sans text-white antialiased">
+    <main class="mx-auto w-[calc(100%-3rem)] max-w-280 max-[480px]:w-[calc(100%-1.75rem)]">
+        <header class="flex h-19 items-center justify-between border-b border-line max-[480px]:h-16">
+            <a class="inline-flex items-center gap-2.5 text-base font-bold tracking-[-0.04em] text-inherit no-underline" href="./Home_Page.html" aria-label="GaFont beranda">
+                <img class="h-6 w-6" src="/assets/img/pink.jpg" alt="GaFont" aria-hidden="true" width="24" height="24">
+                <span>GaFont</span>
+            </a>
+            <span class="inline-flex items-center gap-2 text-xs text-soft max-[480px]:text-[10px]">
+                <span class="size-1.75 rounded-full bg-dodger shadow-[0_0_12px_#1e90ff66]" aria-hidden="true"></span>
+                Typography scale generator
+            </span>
+        </header>
+
+        <section class="flex items-end justify-between gap-6 py-12 max-[760px]:pt-9.5    max-[760px]:pb-7 max-[480px]:flex-col max-[480px]:items-start max-[480px]:gap-4 max-[480px]:pt-8 max-[480px]:pb-6" aria-labelledby="page-title">
+            <div>
+                <p class="mb-2.5 text-[10px] font-bold uppercase tracking-[0.13em] text-muted">Rasio yang pas, desain lebih rapi</p>
+                <h1 id="page-title" class="m-0 text-[clamp(30px,4vw,46px)] font-semibold leading-[1.08] tracking-[-0.055em] max-[480px]:text-[34px]">
+                    Temukan skala tipografi<br class="max-[480px]:hidden"> yang terasa harmonis.
+                </h1>
+                <p class="mt-3.5 text-sm text-muted">Atur ukuran dasar dan rasio, biar kalo design tulisan ga keliatan kek sampah woakwoakwok</p>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-[minmax(270px,0.88fr)_minmax(0,1.35fr)] items-start gap-4.5 max-[760px]:grid-cols-1" aria-label="Pengaturan dan hasil skala font">
+            <div class="border border-line bg-panel p-6 max-[480px]:p-4.75">
+                <div class="flex items-center justify-between gap-3">
+                    <div>
+                        <p class="mb-1.5 text-[10px] font-bold uppercase tracking-[0.13em] text-muted">01 / Pengaturan</p>
+                        <h2 class="m-0 text-lg font-semibold tracking-[-0.035em]">Atur skala kamu</h2>
+                    </div>
+
+                </div>
+
+                <div class="mt-7.25">
+                    <div class="mb-3.25 flex items-center justify-between gap-3">
+                        <label class="text-xs font-semibold text-soft" for="base-size">Base font size</label>
+                        <output id="base-size-value" class="text-[13px] font-bold text-dodger" for="base-size">16px</output>
+                    </div>
+                    <input id="base-size" class="h-1.25 w-full cursor-pointer appearance-none rounded-full bg-[#292929] accent-dodger focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dodger" type="range" min="10" max="24" value="16" step="1">
+                    <div class="mt-2.5 flex justify-between text-[10px] text-muted" aria-hidden="true"><span>10px</span><span>16px</span><span>24px</span></div>
+                </div>
+
+// scale ratio
+
+                <fieldset class="mt-7.25 min-w-0 border-0 p-0">
+                    <legend class="mb-2.5 text-xs font-semibold text-soft">Scale ratio</legend>
+                    <div class="grid gap-1">
+                        <label class="flex min-h-[42px] cursor-pointer items-center gap-2.5 rounded-[9px] border border-transparent px-2.5 text-xs text-soft transition-colors hover:bg-panel-raised has-[:checked]:border-dodger/40 has-[:checked]:bg-dodger/10 has-[:checked]:text-white">
+                            <input class="size-4 accent-dodger focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dodger" type="radio" name="ratio" value="1.2">
+                            <span class="flex-1">Minor Third</span>
+                            <span class="text-muted">1.2</span>
+                        </label>
+                        <label class="flex min-h-[42px] cursor-pointer items-center gap-2.5 rounded-[9px] border border-transparent px-2.5 text-xs text-soft transition-colors hover:bg-panel-raised has-[:checked]:border-dodger/40 has-[:checked]:bg-dodger/10 has-[:checked]:text-white">
+                            <input class="size-4 accent-dodger focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dodger" type="radio" name="ratio" value="1.25">
+                            <span class="flex-1">Major Third</span>
+                            <span class="text-muted">1.25</span>
+                        </label>
+                        <label class="flex min-h-[42px] cursor-pointer items-center gap-2.5 rounded-[9px] border border-transparent px-2.5 text-xs text-soft transition-colors hover:bg-panel-raised has-[:checked]:border-dodger/40 has-[:checked]:bg-dodger/10 has-[:checked]:text-white">
+                            <input class="size-4 accent-dodger focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dodger" type="radio" name="ratio" value="1.5">
+                            <span class="flex-1">Perfect Fifth</span>
+                            <span class="text-muted">1.5</span>
+                        </label>
+                        <label class="flex min-h-[42px] cursor-pointer items-center gap-2.5 rounded-[9px] border border-transparent px-2.5 text-xs text-soft transition-colors hover:bg-panel-raised has-[:checked]:border-dodger/40 has-[:checked]:bg-dodger/10 has-[:checked]:text-white">
+                            <input class="size-4 accent-dodger focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dodger" type="radio" name="ratio" value="1.618" checked>
+                            <span class="flex-1">Golden Ratio</span>
+                            <span class="text-muted">1.618</span>
+                           
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="mt-6.25">
+                    <div class="mb-3.25 flex items-center justify-between gap-3">
+                        <label class="text-xs font-semibold text-soft" for="levels">Font levels above base</label>
+                        <output id="levels-value" class="text-[13px] font-bold text-dodger" for="levels">3 level</output>
+                    </div>
+                    <input id="levels" class="h-1.25 w-full cursor-pointer appearance-none rounded-full bg-[#292929] accent-dodger focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dodger" type="range" min="1" max="5" value="3" step="1">
+                    <div class="mt-2.5 flex justify-between text-[10px] text-muted" aria-hidden="true">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                    </div>
+                </div>
+
+                <p class="mt-6 border-t border-line pt-4 text-[10px] leading-relaxed text-muted"><span class="mr-1 text-dodger" aria-hidden="true">✦</span> Ukuran dihitung dengan rumus base × rasio<sup>level</sup>.</p>
+            </div>
+
+            <div class="grid gap-4.5">
+                <section class="rounded-2xl border border-line bg-panel p-6 max-[480px]:p-4.75" aria-labelledby="scale-title">
+                    <div class="flex items-center justify-between gap-3">
+                        <div>
+                            <p class="mb-1.5 text-[10px] font-bold uppercase tracking-[0.13em] text-muted">02 / Hasil</p>
+                            <h2 id="scale-title" class="m-0 text-lg font-semibold tracking-[-0.035em]">Skala tipografi</h2>
+                        </div>
+                    </div>
+                    <p id="scale-summary" class="mt-3.25 mb-4 text-[11px] text-muted">Golden Ratio <span class="px-1 text-[#737373]">·</span> base 16px</p>
+                    <div id="scale-list" class="border-t border-line" aria-live="polite"></div>
+                    <p id="copy-status" class="mt-2.5 min-h-3.5 text-[10px] text-dodger" role="status" aria-live="polite"></p>
+                </section>
+
+                <section class="rounded-2xl border border-line bg-panel p-6 max-[480px]:p-4.75 max-[480px]:pb-4.25" aria-labelledby="preview-title">
+                    <div class="flex items-center justify-between gap-3">
+                        <div>
+                            <p class="mb-1.5 text-[10px] font-bold uppercase tracking-[0.13em] text-muted">03 / Viewing</p>
+                            <h2 id="preview-title" class="m-0 text-lg font-semibold tracking-[-0.035em]">Preview :3</h2>
+                        </div>
+                        <span class="font-serif text-[32px] tracking-[-0.08em] text-[#404040]">Aa</span>
+                    </div>
+                    <div id="type-preview" class="mt-5 rounded-[11px] border border-line bg-canvas p-4.5"></div>
+                </section>
+            </div>
+        </section>
+
+        <footer class="flex justify-between gap-3 py-6 pb-7.5 text-[10px] text-muted max-[480px]:text-[9px]">
+            <span>GaFont</span><span>Dibuat untuk eksplorasi tipografi.</span>
+        </footer>
+    </main>
+    <script src="./script/Calculate.js"></script>
+</body>
+
+</html>
