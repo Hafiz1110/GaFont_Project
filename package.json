@@ -1,6 +1,6 @@
   {
     "scripts": {
-  "dev": "node src/script/server.js",
+  "dev": "node server.js",
   "build": "echo Build completed"
 },
     "dependencies": {
