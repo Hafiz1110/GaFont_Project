@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const express = require("express");
 const rateLimit = require("express-rate-limit").rateLimit;
 const jwt = require("jsonwebtoken");
-const pool = require("./db");
+const pool = require("./src/script/db");
 
 const app = express();
 const port = Number(process.env.PORT || 3000);
