@@ -25,7 +25,7 @@ app.get(["/", "/index.html"], async (request, response, next) => {
     const token = request.cookies[cookieName];
 
     if (!token) {
-        return response.redirect("/login.html");
+        return response.redirect("/src/login.html");
     }
 
     try {
@@ -37,14 +37,14 @@ app.get(["/", "/index.html"], async (request, response, next) => {
 
         if (!users[0]) {
             clearSessionCookie(response);
-            return response.redirect("/login.html");
+            return response.redirect("/src/login.html");
         }
 
         return next();
     } catch (error) {
         if (error instanceof jwt.JsonWebTokenError || error instanceof jwt.TokenExpiredError) {
             clearSessionCookie(response);
-            return response.redirect("/login.html");
+            return response.redirect("/src/login.html");
         }
 
         return next(error);
