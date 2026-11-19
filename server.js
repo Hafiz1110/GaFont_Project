@@ -51,7 +51,7 @@ app.get(["/", "/index.html"], async (request, response, next) => {
     }
 });
 
-app.use(express.static(path.join(__dirname, "..")));
+app.use(express.static(__dirname));
 
 const authLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
